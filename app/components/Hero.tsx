@@ -9,6 +9,41 @@ export default function Hero() {
   const roles = ['Frontend Developer', 'Full Stack Developer', 'AI / ML Developer']
   const [roleIndex, setRoleIndex] = useState(0)
 
+  const [projectsPos, setProjectsPos] = useState({ x: 0, y: 0 })
+  const [expPos, setExpPos] = useState({ x: 0, y: 0 })
+
+  const handleFleeProjects = () => {
+    const width = window.innerWidth
+    const height = window.innerHeight
+    const padding = 120
+    const randomX = Math.random() * (width - 2 * padding) + padding
+    const randomY = Math.random() * (height - 2 * padding) + padding
+
+    // Relative to left: 15%, bottom: 15% (top: 85%)
+    const originalX = width * 0.15 + 70
+    const originalY = height * 0.85
+    setProjectsPos({
+      x: randomX - originalX,
+      y: randomY - originalY
+    })
+  }
+
+  const handleFleeExp = () => {
+    const width = window.innerWidth
+    const height = window.innerHeight
+    const padding = 120
+    const randomX = Math.random() * (width - 2 * padding) + padding
+    const randomY = Math.random() * (height - 2 * padding) + padding
+
+    // Relative to right: 15% (left: 85%), bottom: 15% (top: 85%)
+    const originalX = width * 0.85 - 70
+    const originalY = height * 0.85
+    setExpPos({
+      x: randomX - originalX,
+      y: randomY - originalY
+    })
+  }
+
   useEffect(() => {
     const interval = setInterval(() => {
       setRoleIndex(prev => (prev + 1) % roles.length)
@@ -91,6 +126,16 @@ export default function Hero() {
         HI, I&apos;M VEDHA
       </motion.h1>
 
+      {/* Location Subtext */}
+      <motion.p
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 2.4, duration: 0.8 }}
+        className="absolute top-[38%] left-[63%] text-[#888] text-[0.90rem] uppercase tracking-[0.2em] font-mono z-20 pointer-events-none select-none whitespace-nowrap"
+      >
+        I&apos;m from Kozhikode, Kerala 
+      </motion.p>
+
       {/* Avatar image — appears first */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.85 }} 
@@ -145,6 +190,48 @@ export default function Hero() {
       >
         Contact me &rarr;
       </motion.button>
+
+      {/* 5+ Projects (Fleeing Stat) */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, x: projectsPos.x, y: projectsPos.y }}
+        transition={{ 
+          type: 'spring', 
+          stiffness: 300, 
+          damping: 20,
+          opacity: { delay: 3.2, duration: 0.8 },
+          x: { type: 'spring', stiffness: 450, damping: 18 },
+          y: { type: 'spring', stiffness: 450, damping: 18 }
+        }}
+        onMouseEnter={handleFleeProjects}
+        className="absolute bottom-[15%] left-[15%] z-20 cursor-default select-none pointer-events-auto"
+      >
+        <div className="flex flex-col items-center justify-center p-5 border border-white/10 bg-black/60 backdrop-blur-md rounded-2xl min-w-[140px] hover:border-[#c471ed]/30 transition-all select-none">
+          <span className="text-[2.2rem] font-bold text-[#c9c5bc] leading-none" style={{ fontFamily: 'var(--font-bebas-neue)' }}>5+</span>
+          <span className="text-[0.6rem] tracking-[0.2em] text-[#888] font-mono uppercase mt-1">Projects</span>
+        </div>
+      </motion.div>
+
+      {/* 2+ Years Experience (Fleeing Stat) */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, x: expPos.x, y: expPos.y }}
+        transition={{ 
+          type: 'spring', 
+          stiffness: 300, 
+          damping: 20,
+          opacity: { delay: 3.4, duration: 0.8 },
+          x: { type: 'spring', stiffness: 450, damping: 18 },
+          y: { type: 'spring', stiffness: 450, damping: 18 }
+        }}
+        onMouseEnter={handleFleeExp}
+        className="absolute bottom-[15%] right-[15%] z-20 cursor-default select-none pointer-events-auto"
+      >
+        <div className="flex flex-col items-center justify-center p-5 border border-white/10 bg-black/60 backdrop-blur-md rounded-2xl min-w-[140px] hover:border-[#f64f59]/30 transition-all select-none">
+          <span className="text-[2.2rem] font-bold text-[#c9c5bc] leading-none" style={{ fontFamily: 'var(--font-bebas-neue)' }}>2+</span>
+          <span className="text-[0.6rem] tracking-[0.2em] text-[#888] font-mono uppercase mt-1">Years Exp</span>
+        </div>
+      </motion.div>
     </section>
   )
 }

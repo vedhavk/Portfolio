@@ -141,12 +141,12 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.85 }} 
         animate={{ opacity: 1, scale: 1 }} 
         transition={{ delay: 0.2, duration: 1.0, ease: 'easeOut' }}
-        className="absolute top-1/2 left-1/2 z-10 w-[clamp(420px,58vw,800px)]"
+        className="absolute top-[63%] left-1/2 z-10 w-[clamp(260px,36vw,520px)]"
         style={{ perspective: '1000px', transform: 'translate(-50%, -46%)' }}
       >
         <div ref={avatarRef} className="w-full will-change-transform" style={{ filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.9))' }}>
           <Image 
-            src="/avatarnew.png" 
+            src="/about_img copy.png" 
             alt="Avatar" 
             width={800} 
             height={800} 

@@ -179,16 +179,16 @@ export default function Hero() {
 
       {/* CTA button */}
       <motion.button 
-        initial={{ opacity: 0, y: 28 }} 
-        animate={{ opacity: 1, y: 0 }} 
+        initial={{ opacity: 0, y: 28, rotate: -10 }} 
+        animate={{ opacity: 1, y: 0, rotate: -10 }} 
         transition={{ delay: 3.0, duration: 0.8 }}
-        className="absolute top-1/2 right-[8%] -translate-y-1/2 rounded-full text-white uppercase text-[0.7rem] font-mono px-8 py-4 z-20 hover:scale-105 transition-transform"
+        className="absolute top-1/2 right-[8%] -translate-y-1/2 rounded-full text-white uppercase text-[0.95rem] font-mono font-bold tracking-[0.16em] px-9 py-3.5 z-20 hover:scale-105 hover:rotate-[-8deg] transition-all border border-white/50"
         style={{ 
-          background: 'linear-gradient(135deg, #c471ed, #f64f59)',
-          boxShadow: '0 0 40px rgba(196,113,237,0.35)'
+          background: 'linear-gradient(90deg, #05010a 0%, #b80085 45%, #e65c00 100%)',
+          boxShadow: '0 0 25px rgba(184, 0, 133, 0.4)'
         }}
       >
-        Contact me &rarr;
+        CONTACT ME
       </motion.button>
 
       {/* 5+ Projects (Fleeing Stat) */}

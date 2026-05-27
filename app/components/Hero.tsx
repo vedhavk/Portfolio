@@ -105,7 +105,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className="fixed top-12 w-full max-w-[85vw] left-1/2 -translate-x-1/2 z-50 flex justify-between text-[#888] uppercase tracking-[0.18em] text-[0.68rem] font-mono"
       >
-        {['About', 'Customers', 'Projects', 'Contact'].map((item) => (
+        {['About', 'Experience', 'Projects', 'Contact'].map((item) => (
           <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-white transition-colors">
             {item}
           </a>
@@ -120,7 +120,7 @@ export default function Hero() {
         className="absolute top-[28%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-[#c9c5bc] z-[1] whitespace-nowrap leading-none m-0 pointer-events-none"
         style={{
           fontFamily: 'var(--font-bebas-neue)',
-          fontSize: 'clamp(5rem, 17vw, 18rem)'
+          fontSize: 'clamp(3rem, 12vw, 12rem)'
         }}
       >
         HI, I&apos;M VEDHA
@@ -131,7 +131,7 @@ export default function Hero() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2.4, duration: 0.8 }}
-        className="absolute top-[38%] left-[63%] text-[#888] text-[0.90rem] uppercase tracking-[0.2em] font-mono z-20 pointer-events-none select-none whitespace-nowrap"
+        className="absolute top-[38%] left-[60%] text-[#888] text-[0.72rem] uppercase tracking-[0.2em] font-mono z-20 pointer-events-none select-none whitespace-nowrap"
       >
         I&apos;m from Kozhikode, Kerala 
       </motion.p>
@@ -141,10 +141,10 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.85 }} 
         animate={{ opacity: 1, scale: 1 }} 
         transition={{ delay: 0.2, duration: 1.0, ease: 'easeOut' }}
-        className="absolute top-[63%] left-1/2 z-10 w-[clamp(260px,36vw,520px)]"
+        className="absolute top-[63%] left-1/2 z-10 w-[clamp(200px,28vw,400px)]"
         style={{ perspective: '1000px', transform: 'translate(-50%, -46%)' }}
       >
-        <div ref={avatarRef} className="w-full will-change-transform" style={{ filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.9))' }}>
+        <div ref={avatarRef} className="w-full will-change-transform" >
           <Image 
             src="/about_img copy.png" 
             alt="Avatar" 
@@ -170,7 +170,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -14 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="uppercase text-[#888] leading-[1.8] font-mono tracking-[0.12em] whitespace-nowrap" style={{ fontSize: 'clamp(1.1rem, 2vw, 1.6rem)' }}
+            className="uppercase text-[#888] leading-[1.8] font-mono tracking-[0.12em] whitespace-nowrap" style={{ fontSize: 'clamp(0.85rem, 1.4vw, 1.2rem)' }}
           >
             {roles[roleIndex]}
           </motion.p>
@@ -182,7 +182,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 28, rotate: -10 }} 
         animate={{ opacity: 1, y: 0, rotate: -10 }} 
         transition={{ delay: 3.0, duration: 0.8 }}
-        className="absolute top-1/2 right-[8%] -translate-y-1/2 rounded-full text-white uppercase text-[0.95rem] font-mono font-bold tracking-[0.16em] px-9 py-3.5 z-20 hover:scale-105 hover:rotate-[-8deg] transition-all border border-white/50"
+        className="absolute top-1/2 right-[8%] -translate-y-1/2 rounded-full text-white uppercase text-[0.78rem] font-mono font-bold tracking-[0.16em] px-7 py-2.5 z-20 hover:scale-105 hover:rotate-[-8deg] transition-all border border-white/50"
         style={{ 
           background: 'linear-gradient(90deg, #05010a 0%, #b80085 45%, #e65c00 100%)',
           boxShadow: '0 0 25px rgba(184, 0, 133, 0.4)'
@@ -206,9 +206,9 @@ export default function Hero() {
         onMouseEnter={handleFleeProjects}
         className="absolute bottom-[15%] left-[15%] z-20 cursor-default select-none pointer-events-auto"
       >
-        <div className="flex flex-col items-center justify-center p-5 border border-white/10 bg-black/60 backdrop-blur-md rounded-2xl min-w-[140px] hover:border-[#c471ed]/30 transition-all select-none">
-          <span className="text-[2.2rem] font-bold text-[#c9c5bc] leading-none" style={{ fontFamily: 'var(--font-bebas-neue)' }}>5+</span>
-          <span className="text-[0.6rem] tracking-[0.2em] text-[#888] font-mono uppercase mt-1">Projects</span>
+        <div className="flex flex-col items-center justify-center p-4 border border-white/10 bg-black/60 backdrop-blur-md rounded-xl min-w-[110px] hover:border-[#c471ed]/30 transition-all select-none">
+          <span className="text-[1.6rem] font-bold text-[#c9c5bc] leading-none" style={{ fontFamily: 'var(--font-bebas-neue)' }}>5+</span>
+          <span className="text-[0.52rem] tracking-[0.2em] text-[#888] font-mono uppercase mt-1">Projects</span>
         </div>
       </motion.div>
 
@@ -227,9 +227,9 @@ export default function Hero() {
         onMouseEnter={handleFleeExp}
         className="absolute bottom-[15%] right-[15%] z-20 cursor-default select-none pointer-events-auto"
       >
-        <div className="flex flex-col items-center justify-center p-5 border border-white/10 bg-black/60 backdrop-blur-md rounded-2xl min-w-[140px] hover:border-[#f64f59]/30 transition-all select-none">
-          <span className="text-[2.2rem] font-bold text-[#c9c5bc] leading-none" style={{ fontFamily: 'var(--font-bebas-neue)' }}>2+</span>
-          <span className="text-[0.6rem] tracking-[0.2em] text-[#888] font-mono uppercase mt-1">Years Exp</span>
+        <div className="flex flex-col items-center justify-center p-4 border border-white/10 bg-black/60 backdrop-blur-md rounded-xl min-w-[110px] hover:border-[#f64f59]/30 transition-all select-none">
+          <span className="text-[1.6rem] font-bold text-[#c9c5bc] leading-none" style={{ fontFamily: 'var(--font-bebas-neue)' }}>2+</span>
+          <span className="text-[0.52rem] tracking-[0.2em] text-[#888] font-mono uppercase mt-1">Years Exp</span>
         </div>
       </motion.div>
     </section>

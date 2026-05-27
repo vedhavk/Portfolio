@@ -15,8 +15,8 @@ export default function About() {
 
   // Desktop Scroll Transforms (Flexbox-based offsets):
   // 1. Image starts centered (offset by ~300px to the right) and moves to its natural left position (0px)
-  const imageX = useTransform(scrollYProgress, [0, 0.08, 0.20], ["300px", "300px", "0px"])
-  const imageScale = useTransform(scrollYProgress, [0, 0.08, 0.20], [0.85, 1, 1])
+  const imageX = useTransform(scrollYProgress, [0, 0.08, 0.35], ["300px", "300px", "0px"])
+  const imageScale = useTransform(scrollYProgress, [0, 0.08, 0.35], [0.85, 1, 1])
   const imageOpacity = useTransform(scrollYProgress, [0, 0.08], [0, 1])
   
   // 2. Description starts transparent, offset slightly left, and fades/slides to its natural right position (0px)
@@ -34,7 +34,7 @@ export default function About() {
         
         {/* Left Image Container (flex: 1) */}
         <motion.div
-          className="flex-1 w-full max-w-[480px] aspect-square flex items-center justify-center z-10"
+          className="flex-1 w-full max-w-[360px] aspect-square flex items-center justify-center z-10"
           style={{
             x: typeof window !== 'undefined' && window.innerWidth >= 768 ? imageX : 0,
             scale: typeof window !== 'undefined' && window.innerWidth >= 768 ? imageScale : 1,
@@ -42,7 +42,7 @@ export default function About() {
             perspective: '1000px'
           }}
         >
-          <div className="w-full h-full relative" style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.8))' }}>
+          <div className="w-full h-full relative" >
             <Image
               src="/about_img copy.png"
               alt="Vedha"

@@ -131,25 +131,6 @@ export default function Hero() {
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden bg-[#0a0a0a]">
 
-      {/* Nav */}
-      <motion.nav 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
-        transition={{ duration: 0.8 }}
-        className="fixed top-12 w-full max-w-[85vw] left-1/2 -translate-x-1/2 z-50 flex justify-between text-[#888] uppercase tracking-[0.18em] text-[0.68rem] font-mono"
-      >
-        {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
-          <a 
-            key={item} 
-            href={`#${item.toLowerCase()}`} 
-            onClick={(e) => handleNavClick(e, item.toLowerCase())}
-            className="hover:text-white transition-colors"
-          >
-            {item}
-          </a>
-        ))}
-      </motion.nav>
-
       {/* Giant headline — wipes left to right after avatar */}
       <motion.h1 
         initial={{ clipPath: 'inset(0 100% 0 0)', opacity: 1 }} 

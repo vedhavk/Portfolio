@@ -95,6 +95,39 @@ export default function Hero() {
     }
   }, [])
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, targetId: string) => {
+    e.preventDefault()
+
+    if (targetId === 'contact') {
+      window.dispatchEvent(new CustomEvent('open-contact'))
+    }
+
+    setTimeout(() => {
+      const element = document.getElementById(targetId)
+      if (!element) return
+
+      const offset = targetId === 'contact' ? 160 : 0
+      const targetPosition = element.getBoundingClientRect().top + window.scrollY - offset
+      const startPosition = window.scrollY
+      const distance = targetPosition - startPosition
+      const duration = 1250 // fluid 1.25s scroll for water-like flow
+      let start: number | null = null
+
+      const easeOutQuint = (t: number) => 1 - Math.pow(1 - t, 5)
+
+      const step = (timestamp: number) => {
+        if (!start) start = timestamp
+        const progress = Math.min((timestamp - start) / duration, 1)
+        window.scrollTo(0, startPosition + distance * easeOutQuint(progress))
+        if (progress < 1) {
+          window.requestAnimationFrame(step)
+        }
+      }
+
+      window.requestAnimationFrame(step)
+    }, targetId === 'contact' ? 80 : 0)
+  }
+
   return (
     <section className="relative w-full h-screen overflow-hidden bg-[#0a0a0a]">
 
@@ -106,7 +139,12 @@ export default function Hero() {
         className="fixed top-12 w-full max-w-[85vw] left-1/2 -translate-x-1/2 z-50 flex justify-between text-[#888] uppercase tracking-[0.18em] text-[0.68rem] font-mono"
       >
         {['About', 'Experience', 'Projects', 'Contact'].map((item) => (
-          <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-white transition-colors">
+          <a 
+            key={item} 
+            href={`#${item.toLowerCase()}`} 
+            onClick={(e) => handleNavClick(e, item.toLowerCase())}
+            className="hover:text-white transition-colors"
+          >
             {item}
           </a>
         ))}
@@ -179,6 +217,7 @@ export default function Hero() {
 
       {/* CTA button */}
       <motion.button 
+        onClick={(e) => handleNavClick(e, 'contact')}
         initial={{ opacity: 0, y: 28, rotate: -10 }} 
         animate={{ opacity: 1, y: 0, rotate: -10 }} 
         transition={{ delay: 3.0, duration: 0.8 }}

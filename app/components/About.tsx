@@ -1,12 +1,20 @@
 "use client"
 
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [activeCard, setActiveCard] = useState<number | null>(null)
+
+  useEffect(() => {
+    const handleOpenContact = () => {
+      setActiveCard(4)
+    }
+    window.addEventListener('open-contact', handleOpenContact)
+    return () => window.removeEventListener('open-contact', handleOpenContact)
+  }, [])
   // Track scroll position of this container for the middle-to-left transition
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -317,6 +325,7 @@ export default function About() {
 
         {/* Card 04 - Socials */}
         <motion.div 
+          id="contact"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}

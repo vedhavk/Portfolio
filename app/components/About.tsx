@@ -8,12 +8,24 @@ export default function About() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [activeCard, setActiveCard] = useState<number | null>(null)
 
+  const [isDesktop, setIsDesktop] = useState(false)
+
   useEffect(() => {
+    setIsDesktop(window.innerWidth >= 768)
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768)
+    }
+    window.addEventListener('resize', handleResize)
+    
     const handleOpenContact = () => {
       setActiveCard(4)
     }
     window.addEventListener('open-contact', handleOpenContact)
-    return () => window.removeEventListener('open-contact', handleOpenContact)
+    
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('open-contact', handleOpenContact)
+    }
   }, [])
   // Track scroll position of this container for the middle-to-left transition
   const { scrollYProgress } = useScroll({
@@ -44,9 +56,9 @@ export default function About() {
         <motion.div
           className="flex-1 w-full max-w-[360px] aspect-square flex items-center justify-center z-10"
           style={{
-            x: typeof window !== 'undefined' && window.innerWidth >= 768 ? imageX : 0,
-            scale: typeof window !== 'undefined' && window.innerWidth >= 768 ? imageScale : 1,
-            opacity: typeof window !== 'undefined' && window.innerWidth >= 768 ? imageOpacity : 1,
+            x: isDesktop ? imageX : 0,
+            scale: isDesktop ? imageScale : 1,
+            opacity: isDesktop ? imageOpacity : 1,
             perspective: '1000px'
           }}
         >
@@ -65,8 +77,8 @@ export default function About() {
         <motion.div
           className="flex-1 w-full max-w-[480px] text-left flex flex-col justify-center z-20 h-[480px]"
           style={{
-            opacity: typeof window !== 'undefined' && window.innerWidth >= 768 ? descOpacity : 1,
-            x: typeof window !== 'undefined' && window.innerWidth >= 768 ? descX : 0,
+            opacity: isDesktop ? descOpacity : 1,
+            x: isDesktop ? descX : 0,
           }}
         >
           <h2 className="text-[#ffffff] text-6xl md:text-7xl font-bold uppercase tracking-wider mb-5 leading-none animate-pulse filter drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]" style={{ fontFamily: 'var(--font-bebas-neue)' }}>

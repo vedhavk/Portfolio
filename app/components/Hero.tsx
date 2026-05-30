@@ -106,7 +106,7 @@ export default function Hero() {
       const element = document.getElementById(targetId)
       if (!element) return
 
-      const offset = targetId === 'contact' ? 160 : 0
+      const offset = 0
       const targetPosition = element.getBoundingClientRect().top + window.scrollY - offset
       const startPosition = window.scrollY
       const distance = targetPosition - startPosition
@@ -125,7 +125,7 @@ export default function Hero() {
       }
 
       window.requestAnimationFrame(step)
-    }, targetId === 'contact' ? 80 : 0)
+    }, 0)
   }
 
   return (

@@ -129,7 +129,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-[#0a0a0a]">
+    <section id="home" className="relative w-full h-screen overflow-hidden bg-[#0a0a0a]">
 
       {/* Nav */}
       <motion.nav 
@@ -138,7 +138,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className="fixed top-12 w-full max-w-[85vw] left-1/2 -translate-x-1/2 z-50 flex justify-between text-[#888] uppercase tracking-[0.18em] text-[0.68rem] font-mono"
       >
-        {['About', 'Experience', 'Projects', 'Contact'].map((item) => (
+        {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
           <a 
             key={item} 
             href={`#${item.toLowerCase()}`} 

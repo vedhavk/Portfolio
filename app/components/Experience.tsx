@@ -152,13 +152,13 @@ export default function Experience() {
       className="relative w-full min-h-screen bg-[#0a0a0a] py-28 overflow-hidden flex flex-col justify-center"
     >
       {/* ── Warm orange ambient glow ── */}
-      <div
+      {/* <div
         className="pointer-events-none absolute inset-0 z-0"
         style={{
           background:
             'radial-gradient(ellipse 60% 50% at 50% 80%, rgba(255,140,50,0.07) 0%, transparent 70%)',
         }}
-      />
+      /> */}
 
       {/* ── Decorative large background heading ── */}
       <div

@@ -21,13 +21,13 @@ export default function Contact() {
 
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY
 
-    if (!accessKey) {
-      console.warn("Web3Forms Access Key is missing. Please add NEXT_PUBLIC_WEB3FORMS_KEY to your .env.local file.")
-      setTimeout(() => {
-        setStatus('missing_key')
-      }, 1000)
-      return
-    }
+    // if (!accessKey) {
+    //   console.warn("Web3Forms Access Key is missing. Please add NEXT_PUBLIC_WEB3FORMS_KEY to your .env.local file.")
+    //   setTimeout(() => {
+    //     setStatus('missing_key')
+    //   }, 1000)
+    //   return
+    // }
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -299,11 +299,11 @@ export default function Contact() {
 
               {status === 'error' && (
                 <p className="text-[#f64f59] font-mono text-[0.7rem] uppercase tracking-wider text-center mt-2 animate-pulse">
-                  ❌ Error sending message. Please try again.
+                  Error sending message. Please try again.
                 </p>
               )}
 
-              {status === 'missing_key' && (
+              {/* {status === 'missing_key' && (
                 <div className="text-[#ffd700] font-mono text-[0.7rem] uppercase tracking-wider text-center mt-2 border border-[#b8860b]/40 bg-black/40 p-3.5 rounded-xl flex flex-col gap-2 pointer-events-auto">
                   <p>⚠️ Almost ready! To receive real emails:</p>
                   <p className="normal-case text-white/70 leading-normal text-[0.62rem]">
@@ -314,7 +314,7 @@ export default function Contact() {
                     <code className="bg-white/10 px-1.5 py-0.5 rounded select-all block mt-1.5 font-bold text-white text-[0.68rem] tracking-normal">NEXT_PUBLIC_WEB3FORMS_KEY=your_key_here</code>
                   </p>
                 </div>
-              )}
+              )} */}
             </form>
           </div>
 

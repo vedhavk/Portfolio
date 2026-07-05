@@ -84,14 +84,7 @@ export default function Footer() {
                   vedhavk2004@gmail.com
                 </a>
               </li>
-              <li>
-                <a 
-                  href="tel:+918848717045"
-                  className="text-[#666] hover:text-white transition-colors duration-300 text-sm font-sans flex items-center gap-2"
-                >
-                  +91 8848717045
-                </a>
-              </li>
+
               <li className="flex gap-4 mt-2">
                 <a 
                   href="https://github.com/vedhavk"

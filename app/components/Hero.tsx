@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import Navbar from './Navbar'
 
 export default function Hero() {
   const avatarRef = useRef<HTMLDivElement>(null)
@@ -129,7 +130,10 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden bg-[#0a0a0a]">
+    <section id="home" className="relative w-full h-screen bg-[#0a0a0a]">
+
+      {/* Navbar is absolute-positioned inside this relative section — scrolls away with Hero */}
+      <Navbar />
 
       {/* Giant headline — wipes left to right after avatar */}
       <motion.h1 

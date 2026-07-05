@@ -143,14 +143,7 @@ export default function Contact() {
                 <span className="font-sans text-[0.68rem] text-white font-bold leading-none">github.com/vedhavk</span>
               </a>
 
-              {/* Phone Pill on Orbit 2 */}
-              <a 
-                href="tel:+918848717045"
-                className="absolute bottom-0 left-[20%] translate-y-1/2 bg-black/75 hover:bg-black border border-white/10 hover:border-[#ffa05e]/40 py-2 px-3.5 rounded-full flex flex-col items-center shadow-lg transition-all duration-300 pointer-events-auto select-none"
-              >
-                <span className="font-mono text-[0.55rem] text-[#888] tracking-widest leading-none mb-1">PHONE</span>
-                <span className="font-sans text-[0.68rem] text-white font-bold leading-none">+91 8848717045</span>
-              </a>
+
             </div>
 
             {/* Orbit 3: Largest (Radius = 220px) */}

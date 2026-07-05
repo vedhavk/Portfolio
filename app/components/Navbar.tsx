@@ -16,7 +16,7 @@ export default function Navbar() {
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
       transition={{ duration: 0.8 }}
-      className="fixed top-12 w-full max-w-[85vw] left-1/2 -translate-x-1/2 z-[999] flex justify-between text-[#888] uppercase tracking-[0.18em] text-[0.68rem] font-mono pointer-events-auto"
+      className="absolute top-12 w-full max-w-[85vw] left-1/2 -translate-x-1/2 z-[999] flex justify-between text-[#888] uppercase tracking-[0.18em] text-[0.68rem] font-mono pointer-events-auto"
     >
       {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
         <a 

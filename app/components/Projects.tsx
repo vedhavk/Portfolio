@@ -6,18 +6,19 @@ import Image from 'next/image'
 
 const projectsData = [
   {
-    id: 'wildguard',
+    id: 'mulearn',
     index: '01',
-    name: 'WildGuard',
-    subtitle: 'AI Wildlife Detection & Alert System',
-    description: 'An AI-powered forest monitoring system designed to prevent human-animal conflicts through ML detection and rapid geo-targeted alerts.',
+    name: 'µLearn Platform',
+    subtitle: 'Community Micro-Learning Platform',
+    description: 'Contributed to frontend development for µLearn (mulearn.org), an open community platform empowering students through gamified learning, peer enablement, and skill building.',
     accomplishments: [
-      'Developed real-time animal detection models using computer vision pipelines to recognize wild intrusions immediately.',
-      'Implemented a localized PIN-code-based alert routing protocol to notify adjacent civilian hubs and forest officials instantly.'
+      'Built modular, reusable frontend components using modern web technologies for high-impact platform features.',
+      'Enhanced user experience and interface consistency across community interest groups and event portals.'
     ],
-    tech: ['Python', 'Machine Learning', 'FastAPI', 'UN SDG-15'],
-    year: '2025',
-    image: '/Wild_Guard.png',
+    tech: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+    year: '2024 – Present',
+    image: '/mulearn1.png',
+    link: 'https://mulearn.org/',
   },
   {
     id: 'ducktrack',
@@ -32,10 +33,25 @@ const projectsData = [
     tech: ['Python', 'Computer Vision', 'React', 'Predictive Analytics'],
     year: '2025',
     image: '/Duck_Track.png',
+    link: 'https://duck-track-2.onrender.com',
+  },
+  {
+    id: 'wildguard',
+    index: '03',
+    name: 'WildGuard',
+    subtitle: 'AI Wildlife Detection & Alert System',
+    description: 'An AI-powered forest monitoring system designed to prevent human-animal conflicts through ML detection and rapid geo-targeted alerts.',
+    accomplishments: [
+      'Developed real-time animal detection models using computer vision pipelines to recognize wild intrusions immediately.',
+      'Implemented a localized PIN-code-based alert routing protocol to notify adjacent civilian hubs and forest officials instantly.'
+    ],
+    tech: ['Python', 'Machine Learning', 'FastAPI', 'UN SDG-15'],
+    year: '2025',
+    image: '/Wild_Guard.png',
   },
   {
     id: 'forensics',
-    index: '03',
+    index: '04',
     name: 'Take-it-down & Trace-an-object',
     subtitle: 'Privacy-First Perceptual Hashing System',
     description: 'A secure, digital forensics tool leveraging perceptual hashing (PhotoDNA-inspired) to trace and flag illegal digital assets on-device.',
@@ -50,7 +66,7 @@ const projectsData = [
   },
   {
     id: 'chatbot',
-    index: '04',
+    index: '05',
     name: 'AI Chatbot for Water Conservation',
     subtitle: 'IBM WatsonX · UN SDG-6',
     description: 'A conversational AI engine built on top of IBM WatsonX dedicated to teaching water literacy and clean sanitation practices.',
@@ -155,9 +171,25 @@ export default function MissionControl() {
                         </span>
                       </div>
                     </div>
-                    <span className="text-[11px] font-mono text-white/60 px-4 py-1.5 rounded-full border border-white/20 bg-white/[0.04] tracking-wider uppercase">
-                      LIVE PROJECT
-                    </span>
+                    <div className="flex items-center gap-2">
+                      {proj.link && (
+                        <a
+                          href={proj.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-mono text-white/90 hover:text-white px-3.5 py-1.5 rounded-full border border-white/30 bg-white/[0.1] hover:bg-white/[0.2] transition-colors tracking-wider uppercase flex items-center gap-1.5 pointer-events-auto"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <span>VISIT SITE</span>
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      )}
+                      <span className="text-[11px] font-mono text-white/60 px-4 py-1.5 rounded-full border border-white/20 bg-white/[0.04] tracking-wider uppercase">
+                        LIVE PROJECT
+                      </span>
+                    </div>
                   </div>
 
                   {/* Image */}
@@ -218,6 +250,19 @@ export default function MissionControl() {
                           <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">
                             {project.badge}
                           </span>
+                        )}
+                        {project.link && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-mono text-emerald-400 hover:text-emerald-300 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 transition-colors uppercase flex items-center gap-1.5"
+                          >
+                            <span>Visit site</span>
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </a>
                         )}
                       </div>
                     </motion.div>

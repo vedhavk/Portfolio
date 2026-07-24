@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useCallback } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, Variants } from 'framer-motion'
 import { createPortal } from 'react-dom'
 
 interface AcademicModalProps {
@@ -9,14 +9,14 @@ interface AcademicModalProps {
   onClose: () => void
 }
 
-const backdropVariants = {
+const backdropVariants: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
   exit: { opacity: 0 },
 }
-const modalVariants = {
+const modalVariants: Variants = {
   hidden: { opacity: 0, scale: 0.93, y: 12 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] } },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] as const } },
   exit: { opacity: 0, scale: 0.95, y: 6, transition: { duration: 0.2, ease: 'easeIn' } },
 }
 

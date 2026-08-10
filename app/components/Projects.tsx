@@ -36,8 +36,23 @@ const projectsData = [
     link: 'https://duck-track-2.onrender.com',
   },
   {
-    id: 'wildguard',
+    id: 'osint-journo',
     index: '03',
+    name: 'OSINT Journo',
+    subtitle: 'Investigative Journalism Platform',
+    description: 'An independent investigative journalism blog powered by Open-Source Intelligence (OSINT). Focuses on verifying, documenting, and presenting evidence-based investigations using publicly available information.',
+    accomplishments: [
+      'Published 10 research-driven investigative reports, including 6 on conflict analysis, 3 on geospatial investigations, and 1 on data security.',
+      'Founder, Creator, and Developer of the entire platform and its operations.'
+    ],
+    tech: ['OSINT', 'Geospatial Intelligence', 'Data Security', 'Next.js'],
+    year: '2024 – Present',
+    image: '/osint1.png',
+    link:'https://blogs.osintjourno.com/'
+  },
+  {
+    id: 'wildguard',
+    index: '04',
     name: 'WildGuard',
     subtitle: 'AI Wildlife Detection & Alert System',
     description: 'An AI-powered forest monitoring system designed to prevent human-animal conflicts through ML detection and rapid geo-targeted alerts.',
@@ -51,7 +66,7 @@ const projectsData = [
   },
   {
     id: 'forensics',
-    index: '04',
+    index: '05',
     name: 'Take-it-down & Trace-an-object',
     subtitle: 'Privacy-First Perceptual Hashing System',
     description: 'A secure, digital forensics tool leveraging perceptual hashing (PhotoDNA-inspired) to trace and flag illegal digital assets on-device.',
@@ -64,20 +79,20 @@ const projectsData = [
     image: '/hackp.png',
     badge: 'HACKP Finalist 2025 · Kerala Police Cyberdome',
   },
-  {
-    id: 'chatbot',
-    index: '05',
-    name: 'AI Chatbot for Water Conservation',
-    subtitle: 'IBM WatsonX · UN SDG-6',
-    description: 'A conversational AI engine built on top of IBM WatsonX dedicated to teaching water literacy and clean sanitation practices.',
-    accomplishments: [
-      'Configured semantic intent models and responsive dialogue workflows on IBM WatsonX to deliver engaging, resource-rich guides.',
-      'Achieved a high automated query-resolution rate regarding community water sanitation guidelines and resources.'
-    ],
-    tech: ['IBM WatsonX', 'NLU', 'Conversational AI', 'UN SDG-6'],
-    year: '2024',
-    image: '/Water.png',
-  }
+  // {
+  //   id: 'chatbot',
+  //   index: '06',
+  //   name: 'AI Chatbot for Water Conservation',
+  //   subtitle: 'IBM WatsonX · UN SDG-6',
+  //   description: 'A conversational AI engine built on top of IBM WatsonX dedicated to teaching water literacy and clean sanitation practices.',
+  //   accomplishments: [
+  //     'Configured semantic intent models and responsive dialogue workflows on IBM WatsonX to deliver engaging, resource-rich guides.',
+  //     'Achieved a high automated query-resolution rate regarding community water sanitation guidelines and resources.'
+  //   ],
+  //   tech: ['IBM WatsonX', 'NLU', 'Conversational AI', 'UN SDG-6'],
+  //   year: '2024',
+  //   image: '/Water.png',
+  // }
 ]
 
 export default function MissionControl() {
